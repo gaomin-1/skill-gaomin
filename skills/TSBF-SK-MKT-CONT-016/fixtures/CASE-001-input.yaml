@@ -1,0 +1,28 @@
+case_id: TSBF-SK-MKT-CONT-016-CASE-001
+upstream:
+  skill_id: TSBF-SK-MKT-STR-004
+  status: accepted
+positioning:
+  positioning_statement: 面向订单与交付协同复杂的中小制造工厂老板，天生不凡 AI OS 把订单、交期、物料和责任行动收拢到一个可追踪的经营闭环里，帮助管理者更早看见风险、更快组织行动。
+  target_customer: 20-200 人、订单与交付协同复杂的中小制造工厂老板和生产负责人
+  job_to_be_done: 在异常扩大为延期之前，看清影响、明确责任、推动行动并留下关闭与复盘证据
+  differentiators:
+    - 异常闭环经营入口
+    - AI 建议与人工确认门协同现有流程
+  reasons_to_believe:
+    - AI 数字工厂缺料异常合成闭环演练
+    - 资产治理与审计控制台演示
+audience_stage: consideration
+business_goal: 让目标工厂老板理解异常闭环价值，并预约一次脱敏场景诊断
+channels:
+  - 微信公众号
+  - 视频号
+  - 销售一对一诊断
+cadence: 每周 3 个公开内容 + 1 个销售协同素材
+available_assets:
+  - 缺料异常合成演练
+  - AI OS 控制台截图
+  - 工厂经营问题清单
+constraints:
+  - 所有数据与案例必须标注合成或已获授权
+  - 不承诺自动化替代管理者或具体收益百分比
