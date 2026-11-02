@@ -1,0 +1,77 @@
+case_id: TSBF-SK-MKT-CONT-016-CASE-001
+status: accepted
+objective: 让目标工厂老板识别交付异常协同的成本，并预约一次基于脱敏资料的经营场景诊断
+funnel_map:
+  - stage: awareness
+    job: 识别订单、交期和物料信息分散带来的经营风险
+    content_role: 用真实工作场景解释问题
+  - stage: consideration
+    job: 理解异常闭环和人工确认门如何协同现有流程
+    content_role: 展示方法、状态机和合成演练
+  - stage: decision
+    job: 判断是否适合从一个高频异常场景开始验证
+    content_role: 提供诊断清单和预约入口
+content_pillars:
+  - name: 工厂异常现场
+    promise: 把老板每天遇到的延期、缺料和责任不清讲清楚
+    proof_source: 工厂经营问题清单
+  - name: AI 数字工厂方法
+    promise: 展示发现到复盘的可追踪闭环
+    proof_source: 缺料异常合成演练
+  - name: 人机协同边界
+    promise: 解释哪些动作由 AI 辅助、哪些动作必须人工确认
+    proof_source: AI OS 控制台的人工门与治理字段
+  - name: 场景诊断与复盘
+    promise: 帮工厂从一个高频异常场景开始验证
+    proof_source: 工厂经营问题清单与脱敏诊断记录
+calendar:
+  - week: 1
+    topic: 为什么老板总在交期快到时才发现缺料
+    format: 长图文
+    channel: 微信公众号
+    stage: awareness
+    cta: 下载工厂异常自查清单
+  - week: 2
+    topic: 一个缺料异常如何走完发现到复盘
+    format: 演示短视频
+    channel: 视频号
+    stage: consideration
+    cta: 查看合成闭环演练
+  - week: 3
+    topic: AI 建议与人工确认门如何一起工作
+    format: 问答图文
+    channel: 微信公众号
+    stage: consideration
+    cta: 预约脱敏场景诊断
+  - week: 4
+    topic: 工厂第一次做 AI 经营协同应该从哪里开始
+    format: 销售协同 Brief
+    channel: 销售一对一诊断
+    stage: decision
+    cta: 提交一个高频异常场景
+metrics:
+  - name: 合格诊断预约数
+    definition: 来自目标工厂且填写了异常场景的预约数量
+    review_cycle: weekly
+  - name: 内容到诊断转化率
+    definition: 完成预约的目标访问者 / 进入诊断 CTA 的目标访问者
+    review_cycle: monthly
+  - name: 人工审核通过率
+    definition: 经负责人审核后可继续使用的内容 Brief / 提交的内容 Brief
+    review_cycle: weekly
+risks:
+  - 合成演练被误解为真实客户效果
+  - 过度承诺自动化，弱化人工责任
+assumptions:
+  - 目标客户愿意先提供一个高频异常场景
+guardrails:
+  - 所有合成数据明确标注 synthetic
+  - 公开内容不得使用未经授权的客户名称、数据和效果
+human_gate:
+  required: true
+  reason: 发布前需审核案例、数据、品牌表达和 CTA
+side_effects: none
+audit:
+  skill_id: TSBF-SK-MKT-CONT-016
+  upstream_skill: TSBF-SK-MKT-STR-004
+  case_id: TSBF-SK-MKT-CONT-016-CASE-001
