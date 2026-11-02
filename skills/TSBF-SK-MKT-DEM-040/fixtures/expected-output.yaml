@@ -1,0 +1,53 @@
+case_id: TSBF-SK-MKT-DEM-040-CASE-001
+status: draft
+workflow_name: 工厂异常诊断内容到人工跟进草案
+triggers:
+  - event: lead_form_submitted
+    source: 合成诊断预约表单
+    dedupe_key: case_id + lead_id
+branches:
+  - name: ICP match
+    condition: 制造业且团队规模 20-200 人
+    next: score_check
+  - name: score_check
+    condition: 至少命中 2 个 ICP 信号且填写了异常场景
+    next: human_review
+actions:
+  - type: create_content_followup_draft
+    mode: draft
+    owner: Marketing OS 项目负责人
+    due_hours: 4
+  - type: create_sales_handoff_draft
+    mode: draft
+    owner: 销售负责人
+    due_hours: 24
+  - type: request_human_approval
+    mode: draft
+    owner: 品牌负责人
+    due_hours: 24
+approval_gate:
+  required: true
+  before:
+    - publish_content
+    - send_message
+    - write_crm
+    - assign_sales_owner
+recovery:
+  - failure: 表单字段缺失或重复事件
+    response: 标记 needs_input 或去重，不生成外部动作
+    escalation: 返回营销负责人补充资料
+  - failure: 人工审批超时
+    response: 保留 draft 并生成提醒
+    escalation: 升级给工作流负责人
+sla:
+  owner: Marketing OS 项目负责人
+  response_hours: 24
+guardrails:
+  - 所有动作保持 draft，禁止真实发送、写 CRM 或分派销售
+  - 不根据单一行为字段断言购买意向或成交概率
+  - 任何案例和数据对外使用前需要授权与人工审核
+side_effects: none
+audit:
+  skill_id: TSBF-SK-MKT-DEM-040
+  upstream_skill: TSBF-SK-MKT-CONT-016
+  case_id: TSBF-SK-MKT-DEM-040-CASE-001
