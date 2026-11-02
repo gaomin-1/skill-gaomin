@@ -1,0 +1,33 @@
+case_id: TSBF-SK-MKT-STR-004-CASE-001
+status: accepted
+positioning_statement: 面向订单与交付协同复杂的中小制造工厂老板，天生不凡 AI OS 把订单、交期、物料和责任行动收拢到一个可追踪的经营闭环里，帮助管理者更早看见风险、更快组织行动；它以 AI 辅助判断和人工确认门协同现有系统，而不是承诺替代管理者或 ERP。
+target_customer: 20-200 人、订单与交付协同复杂的中小制造工厂老板和生产负责人
+job_to_be_done: 在异常扩大为延期之前，看清影响、明确责任、推动行动并留下关闭与复盘证据
+differentiators:
+  - 以异常闭环为经营入口，把发现、核验、分级、方案、人工确认、分派、关闭和复盘串起来
+  - 把 AI 建议与人工确认门放在同一条执行轨迹中，适合渐进式协同现有 ERP、表格和人工流程
+reasons_to_believe:
+  - 已有 AI 数字工厂缺料异常的合成闭环演练
+  - 总仓库已有资产编号、验证状态、审计字段和无外部副作用的控制台演示
+boundaries:
+  - 合成演示证据不能替代真实客户效果证明
+  - 任何真实系统写入、消息发送和高风险经营动作都需要人工确认
+confidence: medium
+assumptions:
+  - 目标客户愿意从一个高频异常场景开始试用
+  - 工厂至少能提供订单、交期、物料和责任人等基础事实
+guardrails:
+  - 不编造市场规模、收入提升、交期改善百分比或客户案例
+  - 事实不足时输出待验证项，不把演示能力表述为生产结果
+human_gate:
+  required: true
+  reason: 品牌负责人需确认定位主张、证据使用和对外承诺边界
+side_effects: none
+audit:
+  skill_id: TSBF-SK-MKT-STR-004
+  case_id: TSBF-SK-MKT-STR-004-CASE-001
+  stages:
+    - normalize_input
+    - draft_positioning
+    - critic_check
+    - final_positioning
