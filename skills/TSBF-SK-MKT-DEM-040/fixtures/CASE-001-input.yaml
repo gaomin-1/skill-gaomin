@@ -1,0 +1,33 @@
+case_id: TSBF-SK-MKT-DEM-040-CASE-001
+upstream:
+  skill_id: TSBF-SK-MKT-CONT-016
+  status: accepted
+content_strategy:
+  objective: 让目标工厂老板识别交付异常协同的成本，并预约一次基于脱敏资料的经营场景诊断
+  calendar:
+    - topic: 为什么老板总在交期快到时才发现缺料
+      channel: 微信公众号
+      cta: 下载工厂异常自查清单
+    - topic: 一个缺料异常如何走完发现到复盘
+      channel: 视频号
+      cta: 查看合成闭环演练
+    - topic: AI 建议与人工确认门如何一起工作
+      channel: 微信公众号
+      cta: 预约脱敏场景诊断
+  metrics:
+    - name: 合格诊断预约数
+      definition: 来自目标工厂且填写了异常场景的预约数量
+    - name: 内容到诊断转化率
+      definition: 完成预约的目标访问者 / 进入诊断 CTA 的目标访问者
+channel_constraints:
+  - 只允许生成草稿，不自动发布
+  - 对外案例和数据需要人工确认
+lead_rules:
+  icp_signals:
+    - 公司属于制造业
+    - 团队规模在 20-200 人
+    - 留下订单、交期或物料异常场景
+  qualification_threshold: 2
+approval_policy: 品牌负责人确认对外内容，销售负责人确认线索分派，系统管理员确认任何真实连接
+owner: Marketing OS 项目负责人
+sla_hours: 24
